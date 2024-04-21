@@ -1,0 +1,21 @@
+https://redis.io/learn/operate/redis-at-scale/scalability/exercise-1
+
+restart [ERR] Node 127.0.0.1:7001 is not empty. Either the node already knows other nodes (check with CLUSTER NODES) or contains some key in database 0.
+redis-cli -p 7000 shutdown
+redis-cli -p 7001 shutdown
+redis-cli -p 7002 shutdown
+sudo rm -rf /var/lib/redis/7000/*
+sudo rm -rf /var/lib/redis/7001/*
+sudo rm -rf /var/lib/redis/7002/*
+
+redis-server /path/to/redis.conf --port 7000 --daemonize yes
+redis-server /path/to/redis.conf --port 7001 --daemonize yes
+redis-server /path/to/redis.conf --port 7002 --daemonize yes
+
+redis-cli -p 7000 FLUSHDB
+redis-cli -p 7001 FLUSHDB
+redis-cli -p 7002 FLUSHDB
+
+redis-cli -p 7000 CLUSTER RESET
+redis-cli -p 7001 CLUSTER RESET
+redis-cli -p 7002 CLUSTER RESET
