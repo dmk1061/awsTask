@@ -1,4 +1,4 @@
-package test.aws.task;
+package test.aws.task.dto;
 
 import lombok.Data;
 

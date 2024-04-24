@@ -10,7 +10,7 @@ import org.springframework.data.redis.core.ReactiveRedisTemplate;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.junit.jupiter.Container;
 import reactor.test.StepVerifier;
-import test.aws.task.ConfigRedis;
+import test.aws.task.config.ConfigRedis;
 
 import java.time.Duration;
 import java.util.List;

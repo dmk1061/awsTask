@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import reactor.core.publisher.Mono;
-import test.aws.task.TaskException;
+import test.aws.task.exception.TaskException;
 import test.aws.task.service.DataService;
 
 @RestController
